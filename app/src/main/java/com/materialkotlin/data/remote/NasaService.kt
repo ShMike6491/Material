@@ -16,8 +16,8 @@ interface NasaService {
             Call<NasaResponse>
 
     companion object {
-        const val BASE_URL = "https://api.nasa.gov/"
-        const val CLIENT_ID = BuildConfig.NASA_API_KEY
+        private const val BASE_URL = "https://api.nasa.gov/"
+        const val API_KEY = BuildConfig.NASA_API_KEY
 
         fun create(): NasaService {
             val logger = HttpLoggingInterceptor().apply { level = Level.BASIC }
