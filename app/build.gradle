@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -15,13 +17,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
 
-    buildTypes.each {
-        Properties properties = new Properties()
-        properties.load(project.rootProject.file("project.properties").newDataInputStream())
-        def apiKey  = properties.getProperty("nasa_api_key", "")
-        it.buildConfigField "String", "NASA_API_KEY", apiKey
+        //Environment variables
+        buildConfigField("String", "NASA_API_KEY", nasa_api_key)
     }
 
     buildTypes {
@@ -29,6 +27,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    buildTypes.each {
+        it.buildConfigField "String", "NASA_API_KEY", nasa_api_key
     }
 
     buildFeatures {
@@ -47,6 +49,7 @@ android {
 
 dependencies {
     // Default
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
