@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import coil.api.load
 import com.materialkotlin.R
 import com.materialkotlin.databinding.FragmentHomeBinding
 import com.materialkotlin.util.AppState
@@ -18,22 +19,29 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         _binding = FragmentHomeBinding.bind(view)
 
         val viewModel: HomeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-        viewModel.getLiveData().observe(viewLifecycleOwner, {render(it)})
+        viewModel.getLiveData().observe(viewLifecycleOwner, { render(it) })
         viewModel.requestDailyImage()
     }
 
     private fun render(state: AppState?) {
-        when(state) {
+        when (state) {
             is AppState.Loading -> {
-                binding.pbLoading.visibility = View.VISIBLE
+                Toast.makeText(context, "Loading", Toast.LENGTH_SHORT).show()
             }
             is AppState.Error -> {
-                binding.pbLoading.visibility = View.GONE
                 Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
             }
             is AppState.Success -> {
-                binding.pbLoading.visibility = View.GONE
-                binding.tvDailyPicTitle.text = state.data.title
+                binding.fabPictureDescription.visibility = View.VISIBLE
+                binding.mainToolbar.title = state.data.title
+                val url = state.data.url
+                url?.let {
+                    binding.ivDailyPicture.load(url) {
+                        lifecycle(this@HomeFragment)
+                        error(R.drawable.default_background)
+                        placeholder(R.drawable.default_background)
+                    }
+                }
             }
         }
     }

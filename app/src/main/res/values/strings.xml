@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">MaterialKotlin</string>
     <string name="content_daily_picture">Daily Nasa Image</string>
+    <string name="heart">heart</string>
+    <string name="home">home</string>
+    <string name="settings">settings</string>
+    <string name="search">search</string>
+    <string name="show_text">Show text</string>
 </resources>
