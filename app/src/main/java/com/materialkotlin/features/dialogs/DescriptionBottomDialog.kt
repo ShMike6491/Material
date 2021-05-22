@@ -9,20 +9,13 @@ import com.materialkotlin.R
 import kotlinx.android.synthetic.main.dialog_description.*
 
 class DescriptionBottomDialog : BottomSheetDialogFragment() {
-    private var title = ""
-    private var description = ""
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.dialog_description, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        arguments?.let {
-            title = it.getString(DIALOG_TITLE_TAG).toString()
-            description = it.getString(DIALOG_DESCRIPTION_TAG).toString()
-        }
-        tv_title.text = title
-        tv_description.text = description
+        tv_title.text = arguments?.getString(DIALOG_TITLE_TAG).toString()
+        tv_description.text = arguments?.getString(DIALOG_DESCRIPTION_TAG).toString()
     }
 
     companion object {

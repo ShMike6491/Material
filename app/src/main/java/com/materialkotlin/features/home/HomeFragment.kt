@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.api.load
 import com.materialkotlin.R
+import com.materialkotlin.data.remote.NasaResponse
 import com.materialkotlin.databinding.FragmentHomeBinding
 import com.materialkotlin.features.dialogs.DescriptionBottomDialog
 import com.materialkotlin.util.AppState
@@ -40,18 +41,27 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
             }
             is AppState.Success -> {
-                binding.fabPictureDescription.visibility = View.VISIBLE
-                binding.mainToolbar.title = state.data.title
-                val url = state.data.url
-                url?.let {
-                    binding.ivDailyPicture.load(url) {
-                        lifecycle(this@HomeFragment)
-                        error(R.drawable.default_background)
-                        placeholder(R.drawable.default_background)
-                    }
+                applyChanges(state.data)
+            }
+        }
+    }
+
+    private fun applyChanges(data: NasaResponse) {
+        binding.apply {
+            fabPictureDescription.visibility = View.VISIBLE
+            data.title?.let {
+                mainToolbar.title = it
+                title = it
+            }
+            data.description?.let {
+                description = it
+            }
+            data.url?.let {
+                ivDailyPicture.load(it) {
+                    lifecycle(this@HomeFragment)
+                    error(R.drawable.default_background)
+                    placeholder(R.drawable.default_background)
                 }
-                title = state.data.title ?: "No title"
-                description = state.data.description ?: "No description"
             }
         }
     }
