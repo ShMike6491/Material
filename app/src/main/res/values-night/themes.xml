@@ -2,15 +2,21 @@
     <!-- Base application theme. -->
     <style name="Theme.MaterialKotlin" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/emperor</item>
+        <item name="colorOnPrimary">@color/nobel</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorSecondaryVariant">@color/emperor</item>
+        <item name="colorOnSecondary">@color/nobel</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="colorSurface">@color/nobel</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="colorError">@color/pomegranate</item>
+        <item name="colorOnError">@color/nobel</item>
+        <item name="colorOnBackground">@color/nobel</item>
+        <item name="android:colorBackground">@color/emperor</item>
     </style>
 </resources>
