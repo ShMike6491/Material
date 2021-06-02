@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.MaterialKotlin" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!--        основной цвет вашего приложения;-->
-        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimary">@color/congress_blue</item>
         <!--        более светлый или тёмный вариант основного цвета, используется в некоторых цветовых схемах;-->
         <item name="colorPrimaryVariant">@color/black</item>
         <!--        цвет, используемый поверх вашего основного, например цвет текста или иконок;-->
