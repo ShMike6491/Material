@@ -2,7 +2,6 @@ package com.materialkotlin.features.home
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -11,7 +10,6 @@ import com.materialkotlin.R
 import com.materialkotlin.data.remote.NasaResponse
 import com.materialkotlin.databinding.FragmentHomeBinding
 import com.materialkotlin.features.dialogs.DescriptionBottomDialog
-import com.materialkotlin.util.AppState
 
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
@@ -30,7 +28,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
 
         val viewModel: HomeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-        viewModel.getLiveData().observe(viewLifecycleOwner, { render(it) })
+        viewModel.getLiveData().observe(viewLifecycleOwner, { applyChanges(it) })
         viewModel.requestDailyImage()
 
         enableNightModeSwitch()
@@ -39,23 +37,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun enableNightModeSwitch() {
         binding.nightModeSwitch.setOnCheckedChangeListener { _, isChecked ->
             if(isChecked) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES); //For night mode theme
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            }
-        }
-    }
-
-    private fun render(state: AppState?) {
-        when (state) {
-            is AppState.Loading -> {
-                Toast.makeText(context, "Loading", Toast.LENGTH_SHORT).show()
-            }
-            is AppState.Error -> {
-                Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
-            }
-            is AppState.Success -> {
-                applyChanges(state.data)
             }
         }
     }

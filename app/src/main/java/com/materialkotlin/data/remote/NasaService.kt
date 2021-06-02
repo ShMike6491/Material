@@ -12,8 +12,7 @@ import retrofit2.http.Query
 
 interface NasaService {
     @GET("planetary/apod")
-    fun getDailyPicture (@Query("api_key") apiKey: String) :
-            Call<NasaResponse>
+    suspend fun getDailyPicture (@Query("api_key") apiKey: String) : NasaResponse
 
     companion object {
         private const val BASE_URL = "https://api.nasa.gov/"
