@@ -1,17 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.MaterialKotlin" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_700</item>
         <item name="colorPrimaryVariant">@color/congress_blue</item>
         <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/purple_700</item>
         <item name="colorSecondaryVariant">@color/congress_blue</item>
         <item name="colorOnSecondary">@color/white</item>
-        <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
         <item name="colorSurface">@color/white</item>
         <item name="colorOnSurface">@color/mine_shaft</item>
         <item name="colorError">@color/pomegranate</item>
