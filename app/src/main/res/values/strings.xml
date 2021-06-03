@@ -8,4 +8,8 @@
     <string name="show_text">Show text</string>
     <string name="our_galaxy">Our Galaxy</string>
     <string name="explore">Explore</string>
+    <string name="space_image">Space Image</string>
+    <string name="earth">Earth</string>
+    <string name="mars">Space</string>
+    <string name="system">System</string>
 </resources>
