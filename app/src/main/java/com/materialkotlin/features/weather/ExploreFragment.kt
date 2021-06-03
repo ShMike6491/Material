@@ -5,15 +5,15 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.materialkotlin.R
-import com.materialkotlin.databinding.FragmentWeatherBinding
+import com.materialkotlin.databinding.FragmentExploreBinding
 
-class WeatherFragment : Fragment(R.layout.fragment_weather) {
+class ExploreFragment : Fragment(R.layout.fragment_explore) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val binding = FragmentWeatherBinding.bind(view)
+        val binding = FragmentExploreBinding.bind(view)
 
         binding.apply {
-            viewPager.adapter = WeatherPagerAdapter(this@WeatherFragment)
+            viewPager.adapter = WeatherPagerAdapter(this@ExploreFragment)
 
             TabLayoutMediator(tabs, viewPager) { tab, position ->
                 tab.setIcon(getTabIcon(position))

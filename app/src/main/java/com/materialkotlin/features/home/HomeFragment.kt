@@ -32,18 +32,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         viewModel.getLiveData().observe(viewLifecycleOwner, { applyChanges(it) })
         viewModel.requestDailyImage()
-
-        enableNightModeSwitch()
-    }
-
-    private fun enableNightModeSwitch() {
-        binding.nightModeSwitch.setOnCheckedChangeListener { _, isChecked ->
-            if(isChecked) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            }
-        }
     }
 
     private fun applyChanges(data: NasaResponse) {

@@ -50,23 +50,7 @@
         android:padding="@dimen/gap_x_small"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/nightModeSwitch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="Night mode"
-                app:layout_constraintStart_toEndOf="@id/radioButton"
-                app:layout_constraintTop_toBottomOf="@id/textButton" />
-
-            <include layout="@layout/fidgets"/>
-        </LinearLayout>
+        <include layout="@layout/fidgets" />
 
     </androidx.core.widget.NestedScrollView>
 

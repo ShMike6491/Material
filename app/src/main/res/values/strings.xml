@@ -12,4 +12,5 @@
     <string name="earth">Earth</string>
     <string name="mars">Space</string>
     <string name="system">System</string>
+    <string name="settings_night_mode">Enable night mode</string>
 </resources>
