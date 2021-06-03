@@ -10,4 +10,16 @@
         android:name="com.materialkotlin.features.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.materialkotlin.features.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.materialkotlin.features.weather.WeatherFragment"
+        android:label="fragment_weather"
+        tools:layout="@layout/fragment_weather" />
 </navigation>

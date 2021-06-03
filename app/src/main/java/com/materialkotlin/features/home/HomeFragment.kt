@@ -4,19 +4,22 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import coil.api.load
 import com.materialkotlin.R
 import com.materialkotlin.data.remote.NasaResponse
 import com.materialkotlin.databinding.FragmentHomeBinding
 import com.materialkotlin.features.dialogs.DescriptionBottomDialog
 
-
 class HomeFragment : Fragment(R.layout.fragment_home) {
-    private var title = ""
-    private var description = ""
+
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: HomeViewModel by viewModels()
+
+    private var title = ""
+    private var description = ""
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,7 +30,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             dialog.show(childFragmentManager, "add_dialog_fragment")
         }
 
-        val viewModel: HomeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         viewModel.getLiveData().observe(viewLifecycleOwner, { applyChanges(it) })
         viewModel.requestDailyImage()
 
