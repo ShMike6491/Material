@@ -1,16 +1,35 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.MaterialKotlin" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <!--        основной цвет вашего приложения;-->
+        <item name="colorPrimary">@color/congress_blue</item>
+        <!--        более светлый или тёмный вариант основного цвета, используется в некоторых цветовых схемах;-->
+        <item name="colorPrimaryVariant">@color/black</item>
+        <!--        цвет, используемый поверх вашего основного, например цвет текста или иконок;-->
+        <item name="colorOnPrimary">@color/nobel</item>
+
+        <!--        вторичный цвет, часто используемый в качестве акцента;-->
+        <item name="colorSecondary">@color/congress_blue</item>
+        <!--        более светлый или тёмный вариант акцентного цвета, используется в некоторых цветовых схемах;-->
+        <item name="colorSecondaryVariant">@color/midnight_blue</item>
+        <!--        цвет поверх акцентного;-->
+        <item name="colorOnSecondary">@color/nobel</item>
+
+<!--        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
+
+        <!--        цвет «поверхностей» (например, BottomSheet, chips);-->
+        <item name="colorSurface">@color/mine_shaft</item>
+        <!--        цвет поверх акцентного;-->
+        <item name="colorOnSurface">@color/nobel</item>
+
+        <!--        цвет для отображения ошибки, например для вывода ошибки в InputTextLayout-->
+        <item name="colorError">@color/pomegranate</item>
+        <!--        текст поверх отображения ошибки-->
+        <item name="colorOnError">@color/nobel</item>
+
+        <!--        цвет элементов/текста на основном фоне-->
+        <item name="colorOnBackground">@color/nobel</item>
+        <!--        цвет под всеми цветами-->
+        <item name="android:colorBackground">@color/rhino</item>
     </style>
 </resources>

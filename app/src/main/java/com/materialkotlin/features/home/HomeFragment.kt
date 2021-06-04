@@ -3,6 +3,7 @@ package com.materialkotlin.features.home
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.api.load
@@ -11,6 +12,7 @@ import com.materialkotlin.data.remote.NasaResponse
 import com.materialkotlin.databinding.FragmentHomeBinding
 import com.materialkotlin.features.dialogs.DescriptionBottomDialog
 import com.materialkotlin.util.AppState
+
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
     private var title = ""
@@ -30,6 +32,18 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val viewModel: HomeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         viewModel.getLiveData().observe(viewLifecycleOwner, { render(it) })
         viewModel.requestDailyImage()
+
+        enableNightModeSwitch()
+    }
+
+    private fun enableNightModeSwitch() {
+        binding.nightModeSwitch.setOnCheckedChangeListener { _, isChecked ->
+            if(isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES); //For night mode theme
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
     }
 
     private fun render(state: AppState?) {
