@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:alpha="1"/>
+        android:alpha="0"/>
 
     <Button
         android:id="@+id/btn_click_me"
@@ -27,6 +27,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:alpha="0"/>
+        android:alpha="1"/>
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
