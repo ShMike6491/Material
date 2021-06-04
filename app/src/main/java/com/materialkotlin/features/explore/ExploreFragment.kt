@@ -1,4 +1,4 @@
-package com.materialkotlin.features.weather
+package com.materialkotlin.features.explore
 
 import android.os.Bundle
 import android.view.View

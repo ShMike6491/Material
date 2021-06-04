@@ -10,7 +10,7 @@
     <string name="explore">Explore</string>
     <string name="space_image">Space Image</string>
     <string name="earth">Earth</string>
-    <string name="mars">Space</string>
+    <string name="mars">Mars</string>
     <string name="system">System</string>
     <string name="settings_night_mode">Enable night mode</string>
 </resources>

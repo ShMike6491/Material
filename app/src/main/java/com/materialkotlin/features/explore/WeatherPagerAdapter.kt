@@ -1,4 +1,4 @@
-package com.materialkotlin.features.weather
+package com.materialkotlin.features.explore
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
