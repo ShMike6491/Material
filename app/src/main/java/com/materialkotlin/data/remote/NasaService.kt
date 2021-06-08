@@ -14,6 +14,9 @@ interface NasaService {
     @GET("planetary/apod")
     suspend fun getDailyPicture (@Query("api_key") apiKey: String) : NasaResponse
 
+    @GET("EPIC/api/natural")
+    suspend fun getNaturalImage (@Query("api_key") apiKey: String) : List<EPICresponse>
+
     companion object {
         private const val BASE_URL = "https://api.nasa.gov/"
         const val API_KEY = BuildConfig.NASA_API_KEY

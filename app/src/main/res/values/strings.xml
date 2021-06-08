@@ -1,9 +1,16 @@
 <resources>
     <string name="app_name">MaterialKotlin</string>
     <string name="content_daily_picture">Daily Nasa Image</string>
-    <string name="heart">heart</string>
-    <string name="home">home</string>
-    <string name="settings">settings</string>
-    <string name="search">search</string>
+    <string name="heart">Heart</string>
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
+    <string name="search">Search</string>
     <string name="show_text">Show text</string>
+    <string name="our_galaxy">Our Galaxy</string>
+    <string name="explore">Explore</string>
+    <string name="space_image">Space Image</string>
+    <string name="earth">Earth</string>
+    <string name="mars">Mars</string>
+    <string name="system">System</string>
+    <string name="settings_night_mode">Enable night mode</string>
 </resources>

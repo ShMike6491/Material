@@ -1,22 +1,23 @@
-package com.materialkotlin.features.home
+package com.materialkotlin.features.explore
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.materialkotlin.data.remote.NasaResponse
 import com.materialkotlin.data.remote.NasaService
 import com.materialkotlin.data.repositories.Repository
 import kotlinx.coroutines.launch
 
-class HomeViewModel(
-    private val liveData: MutableLiveData<NasaResponse> = MutableLiveData(),
+class ExploreViewModel(
     private val repository: Repository = Repository(NasaService.create())
 ) : ViewModel() {
-    fun getLiveData(): LiveData<NasaResponse> = liveData
+    private val _epicList: MutableLiveData<String> = MutableLiveData()
+    val epicList: LiveData<String> get() {
+        getEarthImage()
+        return _epicList
+    }
 
-    fun requestDailyImage() = viewModelScope.launch {
-        val response = repository.getDailyImage()
-        liveData.postValue(response)
+    fun getEarthImage() = viewModelScope.launch {
+        _epicList.postValue(repository.getNaturalImage())
     }
 }
