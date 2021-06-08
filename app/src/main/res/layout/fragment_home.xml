@@ -50,7 +50,13 @@
         android:padding="@dimen/gap_x_small"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <include layout="@layout/fidgets" />
+        <TextView
+            android:id="@+id/tv_span"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp" />
+
+        <!--<include layout="@layout/fidgets" />-->
 
     </androidx.core.widget.NestedScrollView>
 
