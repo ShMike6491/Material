@@ -22,4 +22,10 @@
         android:name="com.materialkotlin.features.explore.ExploreFragment"
         android:label="fragment_weather"
         tools:layout="@layout/fragment_explore" />
+
+    <fragment
+        android:id="@+id/recyclerviewFragment"
+        android:name="com.materialkotlin.features.recyclerview.RecyclerviewFragment"
+        android:label="fragment_recyclerview"
+        tools:layout="@layout/fragment_recyclerview" />
 </navigation>
