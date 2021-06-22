@@ -1,5 +1,6 @@
 package com.materialkotlin.features.dialogs
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,9 @@ class DescriptionBottomDialog : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         tv_title.text = arguments?.getString(DIALOG_TITLE_TAG).toString()
         tv_description.text = arguments?.getString(DIALOG_DESCRIPTION_TAG).toString()
+        activity?.let {
+            tv_description.typeface = Typeface.createFromAsset(it.assets, "MarsMission-Ajpg.ttf")
+        }
     }
 
     companion object {
