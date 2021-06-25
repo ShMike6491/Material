@@ -32,4 +32,9 @@
         <!--        цвет под всеми цветами-->
         <item name="android:colorBackground">@color/rhino</item>
     </style>
+
+    <style name="Theme.MaterialKotlin.Splash">
+        <item name="android:windowBackground">@drawable/splash_background_drawable</item>
+    </style>
+
 </resources>
